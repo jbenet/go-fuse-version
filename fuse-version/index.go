@@ -14,8 +14,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("FuseVersion, AgentVersion, Agent\n")
-	for _, s := range *sys {
-		fmt.Printf("%s, %s, %s\n", s.FuseVersion, s.AgentVersion, s.AgentName)
+	for name, s := range *sys {
+		fmt.Printf("%s.FuseVersion: %s\n", name, s.FuseVersion)
+		fmt.Printf("%s.AgentVersion: %s\n", name, s.AgentVersion)
+		fmt.Printf("%s.AgentName: %s\n", name, s.AgentName)
 	}
 }
